@@ -1,0 +1,7 @@
+Name: Raymond Natividad
+Stack: Python
+GitHub Repo link: https://github.com/Raymond-N/Run_Tracker
+Project name: Run Tracker
+Project description: My project is an app to track and store various types of runs. Run times will also be stored. Users can track their performances and attempt to best their efforts.
+MVP (Minimum Viable Product) features: Protected routes (Must be logged in to view). Login and Registration with validations. Data is validated upon create and edit, errors show. CSS implemented, and possibly other static content. All of CRUD* on a non-User table. .gitignore file in root folder (Create one here). Project is on GitHub.
+Bonus feature(s): Application uses a CSS framework such as Bootstrap. Application is responsive.
