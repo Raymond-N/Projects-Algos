@@ -8,15 +8,6 @@
     <title>Run Tracker</title>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <h1>
-                Run Tracker
-                <img src="../static/images/sports-running-icon-2.png" alt="" height="50" class="d-inline-block align-text-top">
-            </h1>
-        </div>
-    </nav> -->
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <h1>
@@ -26,8 +17,8 @@
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="">Home</a>
-                    <a class="nav-link" href="#">+ Add a new run</a>
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="/new/run">+ Add a new run</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </div>
             </div>
         </div>
@@ -47,14 +38,14 @@
             <tbody>
                 {%for run in runs%}
                 <tr>
-                    <td>{{run.run_name}}</td>
+                    <td><a href="/run-details/{{run.id}}">{{run.run_name}}</a></td>
                     <td>{{run.location}}</td>
                     <td>{{run.date.strftime('%B %e, %Y')}}</td>
                     <td>{{run.creator.first_name}}</td>
                     <td>
                         {%if run.creator.id == user.id%}
-                        <a href="" class="btn btn-outline-dark btn-sm">Edit</a>
-                        <a href="" class="btn btn-outline-dark btn-sm">Delete</a>
+                        <a href="/edit-run/{{run.id}}" class="btn btn-outline-dark btn-sm">Edit</a>
+                        <a href="/delete/{{run.id}}" class="btn btn-outline-dark btn-sm">Delete</a>
                         {%endif%}
                     </td>
                 </tr>

@@ -33,8 +33,8 @@ class Run:
         if not run["miles"] or len(run["miles"]) < 0:
             flash("Number of miles must be greater than 0!")
             is_valid = False
-        if not run["run_time"] or len(run["run_time"]) < 0:
-            flash("Run time must be greater than 0!")
+        if not run["run_time"] or len(run["run_time"]) < 3:
+            flash("Run time must be at least 4 characters!")
             is_valid = False
         return is_valid
     
