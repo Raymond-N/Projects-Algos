@@ -71,6 +71,20 @@ class Run:
         return runs
     
     @classmethod
+    def get_user_runs(cls,user_id):
+        data = {"user_id":user_id}
+        query = """
+                SELECT * FROM runs
+                WHERE user_id = %(user_id)s;
+                """
+        results = connectToMySQL(cls.DB).query_db(query,data)
+        runs = []
+        for row in results:
+            run = cls(row)
+            runs.append(run)
+        return runs
+    
+    @classmethod
     def get_run(cls,run_id):
         data = {"id":run_id}
         query = """

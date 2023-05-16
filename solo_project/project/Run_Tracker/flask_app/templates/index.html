@@ -8,7 +8,7 @@
     <title>Run Tracker</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg" style="background-color: #A3CEF1;">
         <div class="container-fluid">
             <h1>
                 Run Tracker
@@ -18,8 +18,8 @@
     </nav>
     <div class="container mt-5">
         <div class="row gx-5">
-            <div class="col-sm">
-                <h2>Register</h2>
+            <div class="col-sm border border-dark" style="background-color: #274C77;">
+                <h2 class="m-2 p-2 text-white">Register</h2>
                 <div>
                     {%with messages = get_flashed_messages(category_filter = ["register"])%}
                     {%if messages%}
@@ -29,32 +29,32 @@
                     {%endif%}
                     {%endwith%}
                 </div>
-                <form action="/register" method="post">
+                <form action="/register" method="POST" class="m-2 p-2">
                     <div class="form-group m-1">
-                        <label for="first_name">First Name</label>
+                        <label for="first_name" class="text-white">First Name</label>
                         <input type="text" id="first_name" class="form-control mt-2" name="first_name">
                     </div>
                     <div class="form-group m-1">
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name" class="text-white">Last Name</label>
                         <input type="text" id="last_name" class="form-control mt-2" name="last_name">
                     </div>
                     <div class="form-group m-1">
-                        <label for="email">Email</label>
+                        <label for="email" class="text-white">Email</label>
                         <input type="text" id="email" class="form-control mt-2" name="email">
                     </div>
                     <div class="form-group m-1">
-                        <label for="password">Password</label>
+                        <label for="password" class="text-white">Password</label>
                         <input type="password" id="password" class="form-control mt-2" name="password">
                     </div>
                     <div class="form-group m-1">
-                        <label for="confirm_password">Confirm Password</label>
+                        <label for="confirm_password" class="text-white">Confirm Password</label>
                         <input type="password" id="confirm_password" class="form-control mt-2" name="confirm_password">
                     </div>
-                    <button class="btn btn-primary mt-2">Register</button>
+                    <button class="btn btn-outline-light mt-3">Register</button>
                 </form>
             </div>
-            <div class="col-sm">
-                <h2>Login</h2>
+            <div class="col-sm border border-dark" style="background-color: #6096BA;">
+                <h2 class="m-2 p-2 text-white">Login</h2>
                 <div>
                     {%with messages = get_flashed_messages(category_filter = ["login"])%}
                     {%if messages%}
@@ -64,16 +64,16 @@
                     {%endif%}
                     {%endwith%}
                 </div>
-                <form action="/login" method="post">
+                <form action="/login" method="POST" class="m-2 p-2">
                     <div class="form-group m-1">
-                        <label for="email">Email</label>
+                        <label for="email" class="text-white">Email</label>
                         <input type="text" id="email" class="form-control mt-2" name="email">
                     </div>
                     <div class="form-group m-1">
-                        <label for="password">Password</label>
+                        <label for="password" class="text-white">Password</label>
                         <input type="password" id="password" class="form-control mt-2" name="password">
                     </div>
-                    <button class="btn btn-success mt-2">Login</button>
+                    <button class="btn btn-outline-light mt-3">Login</button>
                 </form>
             </div>
         </div>

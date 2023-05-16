@@ -1,5 +1,6 @@
 from flask_app import app
-from flask import render_template,redirect,request,session
+from flask import flash
+from flask import render_template,redirect,request,session,abort
 from flask_app.models import user,run
 
 @app.route("/dashboard")
@@ -40,6 +41,9 @@ def update_run(id):
         return redirect("/")
     current_user = user.User.get_by_id(session["user_id"])
     current_run = run.Run.get_run(id)
+    if current_run.user_id != current_user.id:
+        flash("You are not authorized to edit this data!")
+        return redirect("/dashboard")
     return render_template("edit-run.html",user=current_user,run=current_run)
 
 @app.route("/edit-run/<int:id>",methods=["POST"])
@@ -48,14 +52,25 @@ def edit_run(id):
         return redirect("/")
     if run.Run.validate_run(request.form):
         run.Run.update_run(request.form, id)
-        return redirect(f"/dashboard")
+        return redirect("/dashboard")
     return redirect(f"/edit-run/{id}")
+
+@app.route("/user/runs")
+def my_runs():
+    if "user_id" not in session:
+        return redirect("/")
+    current_user = user.User.get_by_id(session["user_id"])
+    all_runs = run.Run.get_user_runs(current_user.id)
+    return render_template("my-runs.html",runs=all_runs,user=current_user)
 
 @app.route("/delete/<int:id>")
 def delete_run(id):
     if "user_id" not in session:
         return redirect("/")
+    current_user = user.User.get_by_id(session["user_id"])
     current_run = run.Run.get_run(id)
-    if "user_id" == current_run.creator:
-        run.Run.delete_run(id)
+    if current_run.user_id != current_user.id:
+        flash("You are not authorized to delete this data!")
+        return redirect("/dashboard")
+    run.Run.delete_run(id)
     return redirect("/dashboard")
