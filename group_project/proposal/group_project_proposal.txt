@@ -1,0 +1,10 @@
+Names: Raymond Natividad: Back-end, 
+Randy Luc: Front-end, 
+Matthew Porter: Login and Registration
+
+Stack: Javascript MERN
+GitHub Repo link: TBD
+Project name: WhatSurf
+Project description: Our project is a surf app that will allow you to create a meet up points and leave description for your fellow users to see the Wave Reports. 
+MVP (Minimum Viable Product) features: Protected routes (Must be logged in to view). Login and Registration with validations. Data is validated upon create and edit, errors show. CSS implemented, and possibly other static content. All of CRUD* on a non-User table. .gitignore file in root folder (Create one here). Project is on GitHub.
+Bonus feature(s): Application uses a CSS framework such as Bootstrap. Application is responsive.
