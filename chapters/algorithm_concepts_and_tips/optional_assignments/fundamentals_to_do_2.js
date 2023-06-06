@@ -96,3 +96,21 @@ function fitTheFirstValue(arr) {
 fitTheFirstValue([10,2,3]);
 fitTheFirstValue([1,2,3,4,5,6]);
 fitTheFirstValue([2,2]);
+
+
+// CHALLENGE 8
+function fahrenheitToCelsius(fDegrees) {
+    const celsius = (fDegrees - 32)*(5/9);
+    console.log(`${celsius} degrees celsius`);
+    return celsius;
+}
+fahrenheitToCelsius(80);
+
+
+//CHALLENGE 9
+function celsiusToFahrenheit(cDegrees) {
+    const fahrenheit = ((9/5)*cDegrees) + 32;
+    console.log(`${fahrenheit} degrees fahrenheit`);
+    return fahrenheit;
+}
+celsiusToFahrenheit(30);
