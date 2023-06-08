@@ -114,12 +114,119 @@ incrementTheSeconds([1,3,5,7,9,11]);
 
 // CHALLENGE 8
 // keep working!
+// function previousLengths(arr) {
+//     let newArr = [];
+//     for(let str in arr) {
+//         newArr.push(arr[str].length);
+//     }
+//     console.log(newArr);
+//     return newArr;
+// }
+// previousLengths(['apple','orange','banana','kiwi','lime']);
+// function previousLengths(arr) {
+//     let newArr = [];
+//     for (let i = 1; i < arr.length; i++) {
+//         newArr.push(arr[i-1].length);
+//     }
+//     console.log(newArr);
+//     return newArr;
+// }
+// previousLengths(['apple','orange','banana','kiwi','lime']);
 function previousLengths(arr) {
-    for (let i = 1; i < arr.length; i++) {
-        arr[i] = arr[i - 1].length;
+    arr.unshift(...arr.splice(-1));
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].length;
     }
     return arr;
 }
+
 const array = ['apple', 'banana', 'orange', 'kiwi'];
+
 const modifiedArray = previousLengths(array);
 console.log(modifiedArray);
+
+
+// CHALLENGE 9
+function addSevenToMost(arr) {
+    let newArr = [];
+    for(let i = 1; i < arr.length; i++) {
+        newArr.push(arr[i] += 7);
+    }
+    console.log(newArr);
+    return newArr;
+}
+addSevenToMost([1,2,3,4]);
+
+
+// CHALLENGE 10
+function reverse(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    while(start < end) {
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+    console.log(arr);
+    return arr;
+}
+reverse([3,1,6,4,2]);
+
+
+// CHALLENGE 11
+function negative(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] >= 0) {
+            arr[i] = -arr[i];
+        }
+    }
+    console.log(arr);
+    return arr;
+}
+negative([1,-3,5]);
+
+
+// CHALLENGE 12
+function alwaysHungry(arr) {
+    let yummyCount = 0;
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === "food") {
+            console.log("yummy");
+            yummyCount++;
+        }
+    }
+    if(yummyCount === 0) {
+        console.log("I'm Hungry!");
+    }
+}
+alwaysHungry([2,1,3]);
+
+
+// CHALLENGE 13
+function swapTowardTheCenter(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+    while(start < end) {
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start += 2;
+        end-= 2;
+    }
+    console.log(arr);
+    return arr;
+}
+swapTowardTheCenter([1,2,3,4,5,6]);
+
+
+// CHALLENGE 14
+function scaleTheArray(arr,num) {
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] *= num;
+    }
+    console.log(arr);
+    return arr;
+}
+scaleTheArray([1,2,3,4],2);
