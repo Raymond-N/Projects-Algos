@@ -1,0 +1,47 @@
+1. What is source code?
+Source code is the way we can communicate with computers to tell them what to do. We create code to program computers so they can execute functions.
+
+2. What makes computers so “smart”, anyway?
+Computers posess a large memory. They can decipher different coding languages and execute the necessary code. 
+
+3. What is the purpose of a programming language?
+Programming languages are used to write computer programs, which instruct the computer to perform some computation, and organize the flow of control between external devices.
+
+4. What are 3 examples of programming languages? Why are there so many of these?
+Three examples of programming languages are: Python, Java, and Javascript. There are so many programming languages because sometimes you need to sue different languages to solve different problems.
+
+5. What is a variable? Why are variables useful?
+Variable is a value that can change depending on conditions or programs it is passed through. Variables are important because they store values in memory can can be manipulated in a computer program.
+
+6. What is the difference between a single-equals (=) and a double-equals (==)?
+Single-equals (=) is used to assign value to a variable. Double-equals (==) is used to compare two variables.
+
+7. What is the difference between a double-equals (==) and a triple-equals (===)?
+Both are comparison operators. However, double-equals (==) is a loose comparison that performs type coercion. This means that it will automatically convert the data being compared to the same data type in order to see if the comparison is possible. Triple-equals (===) is a strict comparison. It will not perform type coercion. This means that the values being compared will have to be the same data type and have the same value for the comparison to be True.
+
+8. Why does the developer console exist?
+I would say the developer console exists as a way to actually see how our code is working during a test. This tool can be utilized to make debugging more efficient. 
+
+9. When we talk about “conditional” statements, what does that mean? What is an example?
+Conditional statements are used in programming to make it so certain parts of code blocks will run based on if statements are True or Fasle. An example of a conditional statement is the "If/Else" conditional stateement.
+
+10. Why would we want FOR or WHILE loops in our source code?
+For or While loops make it possible to go through data more than one time without having to repeat ourselves while coding. Loops can be used to write more efficient code.
+
+11. When would you use a WHILE loop, instead of a FOR loop?
+A while loop should be used when a block of code needs to be run an unknown amount of times until a condition is met. A For loop should be used when you would like a block of code to run for a known amount of times.
+
+12. What is a function? Why would we use functions?
+A function is a block of code that can be used to execute a particular task. We use functions so that we can use code multiple times without having to write it out as many times as we'd need it.
+
+13. How many values can you receive back from a function? How many values can you send in?
+A function can only return a single object back. You can pass in as many values into a function as you'd like.
+
+14. What is an array? How many values does it hold?
+An array is a collection of similar data types. An array can hold over 2,000,000,000 values.
+
+15. What is a T-diagram and why should I know how to use one?
+A T-diagram is a tool to help developers keep track of variables and their values while a function is being run. You should know how to use one to better understand how your code is manipulating other variables.
+
+16. What are the two ways to comment JS code? When would you use one versus the other?
+The first way is with "//". The second way to comment is with "/* ... */". The first way ("//") should be used for smaller single line comments. The second ("/* ... */") should be used for longer form comments that could span multiple lines.
