@@ -1,0 +1,23 @@
+1. What is the JavaScript Math library? What does it contain?
+This is a library that consist of many mathematical operations that can be used to complete mathematical issues in code.
+
+2. Why aren’t all those functions just included in JavaScript automatically?
+This is done so they can be excluded from certain minimized versions of a language.
+
+3. If I call Math.random(), what will it return?
+It will return a randomly generated decimal number between 0 and 1.
+
+4. What do the following functions do: Math.floor, Math.ceil, Math.trunc, Math.round?
+Math.floor makes negative numbers mor negative and positive numbers more positive. Math.ceil makes positive numbers more positive and negative numbers less negative. Math.trunc drops any fraction moving the number toward zero. Math.round will round a number to the nearest integer.
+
+5. When do Math.floor and Math.trunc not return the same value?
+In the case of -3.1416, Math.floor will return -4 and Math.trunc will return -3. 
+
+6. What is the % operator? When is it useful?
+Modulo operator is a companion to the divide operator. It can provide a remainder. Modulo divided the second number into the first number an integer numbe of times and returns the remainder. One case where it is best to use a modulo is determining if number is even or odd.
+
+7. How do I make variables declared outside (right next to) a function visible inside it?
+After declaring a variable outside of a function you would just need to call the variable inside of the function to make it visible inside of the function.
+
+8. Why should I comment my code? If I know what it does, isn’t commenting just a waste of time?
+You should comment on your code because you will be able to identify what your code is doing. This is especially helpful in cases where you are working on something different and coming back to your code. Your future self will thank you for your comments.
