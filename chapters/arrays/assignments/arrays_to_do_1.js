@@ -53,7 +53,7 @@ function popFront(arr){
         arr[i] = arr[i+1];
     }
 
-    arr.length = arr.length - 1;
+    arr.length--;
 
     console.log(arr);
     return poppedFront;
@@ -125,7 +125,7 @@ function removeAt(arr,index){
         arr[i] = arr[i+1];
     }
 
-    arr.length = arr.length - 1;
+    arr.length--;
 
     console.log(arr);
     return indexValue;
