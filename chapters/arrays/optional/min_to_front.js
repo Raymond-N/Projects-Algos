@@ -16,10 +16,10 @@ function minToFront(arr) {
     const minValue = arr[minIndex];
     // loop to shift array starting at index to replace minValue
     for(let i = minIndex; i > 0; i--) {
+        let temp = arr[i];
         arr[i] = arr[i-1];
+        arr[i-1] = temp;
     }
-    // move minValue to front by declaring arr[0] to minValue
-    arr[0] = minValue;
     return arr;
 }
 console.log(minToFront([4,2,1,3,5]));
