@@ -33,6 +33,7 @@ console.log(pushFront([99], 7));
 // popFront([4,5,7,9]) => 4 returned, with [5,7,9] printed in the function
 
 function popFront(arr){
+    /* Solving by creating new array
     // lets make new arr
     let arrNew = [];
     // loop through current array
@@ -43,6 +44,19 @@ function popFront(arr){
     console.log(arrNew);
     // return arr[0]
     return arr[0];
+    */
+
+    // Solved by using same array
+    const poppedFront = arr[0];
+
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i+1];
+    }
+
+    arr.length = arr.length - 1;
+
+    console.log(arr);
+    return poppedFront;
 }
 console.log(popFront([0,5,10,15]));
 console.log(popFront([4,5,7,9]));
@@ -85,6 +99,7 @@ console.log(insertAt([9,33,7], 1, 42));
 // removeAt([8,20,55,44,98], 3) => 44 returned, with [8,20,55,98] printed in the function
 
 function removeAt(arr,index){
+    /* Solved using new array
     // create new array
     let arrNew = [];
 
@@ -102,6 +117,18 @@ function removeAt(arr,index){
 
     //return array value at index
     return arr[index];
+    */
+    // Solved using same array
+    const indexValue = arr[index];
+
+    for(let i = index; i < arr.length; i++) {
+        arr[i] = arr[i+1];
+    }
+
+    arr.length = arr.length - 1;
+
+    console.log(arr);
+    return indexValue;
 }
 console.log(removeAt([1000,3,204,77], 1));
 console.log(removeAt([8,20,55,44,98], 3));
