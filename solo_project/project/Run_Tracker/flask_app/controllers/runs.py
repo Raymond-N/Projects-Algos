@@ -12,7 +12,7 @@ def dashboard():
     return render_template("dashboard.html",user=current_user,runs=all_runs)
 
 @app.route("/new/run")
-def add_sighting():
+def add_run():
     if "user_id" not in session:
         return redirect("/")
     current_user = user.User.get_by_id(session["user_id"])

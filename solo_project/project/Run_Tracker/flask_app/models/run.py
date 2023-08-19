@@ -12,7 +12,9 @@ class Run:
         self.location = data["location"]
         self.date = data["date"]
         self.miles = data["miles"]
-        self.run_time = data["run_time"]
+        self.hours = data["hours"]
+        self.minutes = data["minutes"]
+        self.seconds = data["seconds"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
         self.user_id = data["user_id"]
@@ -33,16 +35,21 @@ class Run:
         if not run["miles"] or len(run["miles"]) < 0:
             flash("Number of miles must be greater than 0!")
             is_valid = False
-        if not run["run_time"] or len(run["run_time"]) < 3:
-            flash("Run time must be at least 4 characters!")
+        # if not run["hours"]:
+        #     is_valid = False
+        if not run["minutes"] or len(run["minutes"]) < 1:
+            flash("Minutes must be greater than 0!")
+            is_valid = False
+        if not run["seconds"] or len(run["seconds"]) < 1:
+            flash("Seconds must be greater than 0!")
             is_valid = False
         return is_valid
     
     @classmethod
     def create_run(cls,data):
         query = """
-                INSERT INTO runs (run_name,location,date,miles,run_time,user_id)
-                VALUES (%(run_name)s,%(location)s,%(date)s,%(miles)s,%(run_time)s,%(user_id)s);
+                INSERT INTO runs (run_name,location,date,miles,hours,minutes,seconds,user_id)
+                VALUES (%(run_name)s,%(location)s,%(date)s,%(miles)s,%(hours)s,%(minutes)s,%(seconds)s,%(user_id)s);
                 """
         return connectToMySQL(cls.DB).query_db(query,data)
     
@@ -111,7 +118,7 @@ class Run:
     def update_run(cls,data,run_id):
         query = """
                 UPDATE runs SET
-                run_name = %(run_name)s, location = %(location)s, date = %(date)s, miles = %(miles)s, run_time = %(run_time)s, user_id = %(user_id)s
+                run_name = %(run_name)s, location = %(location)s, date = %(date)s, miles = %(miles)s, hours = %(hours)s, minutes = %(minutes)s, seconds = %(seconds)s, user_id = %(user_id)s
                 WHERE id = %(id)s;
                 """
         run_data = dict(data)
