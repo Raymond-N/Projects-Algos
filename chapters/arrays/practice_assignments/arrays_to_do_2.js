@@ -85,3 +85,50 @@ console.log(rotateArr([1,2,3,4,5], -2));
 Alan is good at breaking secret codes. One method is to eliminate values that lie outside of a specific known range. Given arr and values min and max, retain only the array values between min and max. Work in-place: return the array you are given, with values in original order. No built-in array functions.
 */
 
+function filterRange(arr, min, max) {
+    // create a base for the while loop
+    let i = 0;
+    let j = 0;
+
+    // loop through array
+    while(i < arr.length) {
+        // run a conditional to check arr[i] is between the range
+        if(arr[i] >= min && arr[i] <= max) {
+            // make arr[j] = to the number at arr[i]
+            arr[j] = arr[i];
+            // increment j
+            j++;
+        }
+        // increment i
+        i++;
+    }
+    // shorten array to eliminate values outside of range
+    arr.length = j;
+
+    return arr;
+}
+console.log(filterRange([1,2,3,4,5,6,7,8,9], 3, 7));
+
+
+/* CONCAT
+
+Replicate JavaScript's concat(). Create a standalone function that accepts two arrays. Return a new array containing the first array's elements, followed by the second array's elements. Do not alter the original arrays. Ex.: arrConcat( ['a','b'], [1,2] ) should return new array ['a','b',1,2].
+*/
+
+function arrConcat(arr1, arr2) {
+    // create new array to hold all elements
+    let newArray = [];
+
+    // loop through arr1 and add values to newArray
+    for(let i = 0; i < arr1.length; i++) {
+        newArray[newArray.length] = arr1[i];
+    }
+
+    // loop through arr2 and add values to newArray
+    for(let j = 0; j < arr2.length; j++) {
+        newArray[newArray.length] = arr2[j];
+    }
+
+    return newArray;
+}
+console.log(arrConcat([1,2,3,4,5], [6,7,8,9,10]));
